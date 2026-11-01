@@ -326,6 +326,7 @@ async function inspectHistoricalReference(collection,row){
 }
 function renderFeature(id){
   const feature=features.find(item=>item.id===id&&featureAllowed(item));
+  if(feature&&workspaceMode==='creator'&&creatorDraftSections.includes(id)){renderCreatorDraftPreview();return;}
   if(feature&&workspaceMode==='creator'&&id==='providers-models'){renderAssistanceStatus();return;}
   if(feature&&workspaceMode==='creator'&&id==='usage-budgets'){renderAIUsage();return;}
   if(feature&&workspaceMode==='creator'&&id==='historical-reference-library'){renderHistoricalReference();return;}
