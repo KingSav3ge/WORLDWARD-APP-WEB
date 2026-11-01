@@ -2,7 +2,7 @@
 
 ## Independent Store characterization candidate — 1 November 2026
 
-The existing App owner is preparing a separate published-source review candidate
+The existing App owner continues the separate published-source review candidate
 on `review/app-store-characterization-20261101`, based on published App
 `c04ba5524ae95316c7e826fc63085a4916d7dd67`. This is not restoration or adoption
 of inaccessible owner work. Preserve failed sessions, snapshots and unique old
@@ -16,18 +16,37 @@ without another record write or replacement. It deliberately characterizes JSON
 file storage, not initialized Core worlds, a Creator envelope or crash recovery.
 The POSIX confirmation case skips on Windows because sync_parent is a no-op there.
 
-Execution is pending the existing coordinator's exact-commit run:
+Coordinator execution receipt for original source
+`f8bfa2853d348b7371439d07fc19e0ec9cb92767` (reported through the existing relay):
+- The prescribed bare discovery command exited 1 with one unittest loader error:
+  assistance imported core_world before server bootstrapped the selected Engine.
+  None of the four test methods ran; this was not a Store behavioral failure.
+- A separate diagnostic with
+  `PYTHONPATH=IRGS_Web:Engine/IRGS_3_3/runtime` ran all four methods successfully,
+  zero skips, on Linux. The App component verifier also passed. This diagnostic
+  remains attributed to its explicit command/environment and original source.
+
+The successor imports server before assistance, matching the existing host-test
+bootstrap. It honors normal Engine discovery and IRGS_ENGINE_ROOT without a
+PYTHONPATH override. No test method/assertion or runtime Store behavior changed.
+The failed source and its original evidence remain in Git history.
+
+Fresh successor execution is pending the existing coordinator:
 `python3 -B -m unittest discover -s IRGS_Web/tests -p test_store_write_characterization.py -v`
 and `python3 -B tools/verify_components.py --component app`.
-No test pass, filesystem crash qualification or Alpha gate closure is claimed.
+Run without the diagnostic PYTHONPATH override, with the declared dependency
+roots selected normally. The owner has not executed the corrected source.
+No filesystem crash, native Windows, Creator protocol or Alpha gate qualification
+is established by these primitive tests.
 
 Stable Saves candidate `197d41a910b37b5c8b27d0f7dc9224b068244364` remains separate
 and unchanged for its coordinator tests. This branch does not include that fix.
 Engine stays pinned at `ecca8094a2d2cdb8a11e018a085487288b26e88d`; Catalog stays
 pinned at `a18cb48928da25d40d057a182c69f71ef149ce80`.
 
-Preview source assessment is complete; preview implementation is held behind this
-characterization. The exact selected Engine world_draft.preview_initialization
+Independent preview candidate `1fa64ca1b9710826a8990fc03f8bbef05fc56fcf` remains
+unchanged on its own review branch while coordinator execution is pending. It is
+not included in this Store candidate. The earlier preview boundary assessment follows. The exact selected Engine world_draft.preview_initialization
 DTO is `irgs-world-initialization-preview-1`: preview_only, committed false,
 requires_explicit_acceptance true, preview_identities_reusable false, with an
 actor_view derived by Engine shared_runtime.actor_view from its disposable

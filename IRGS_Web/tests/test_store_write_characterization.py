@@ -15,8 +15,9 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from assistance import sync_parent
+# Import the host first so its Engine-root bootstrap precedes assistance.
 from server import Store
+from assistance import sync_parent
 
 
 class StoreWriteCharacterizationTests(unittest.TestCase):
